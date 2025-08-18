@@ -25,7 +25,7 @@ bash 1-Ball_Calibration/p_calibration.sh 1-Ball_Calibration/2024-12-29_12-24-17.
 **组内快捷测试**：
 
 ```bash
-PATH_BALL_MP4=/mnt/liying.cibr.ac.cn_usb2/social-seq-playground/1-Ball_Calibration/2024-12-29_12-24-17.mp4
+PATH_BALL_MP4=/home/liying_lab/chenxinfeng/ml-project/Social_Seq-Pipeline-Playground/1-Ball_Calibration/2024-12-29_12-24-17.mp4
 SETUPNAME=carl
 
 /home/liying_lab/chenxf/ml-project/LILAB-py/lilab/multiview_scripts_dev/p_calibration.sh  $PATH_BALL_MP4  $SETUPNAME
@@ -47,7 +47,7 @@ cd 2-Social_3D_Pose/
 
 ```bash
 vdir=.
-ball=/mnt/liying.cibr.ac.cn_usb2/social-seq-playground/2023-05-24_ball.calibpkl
+ball=/home/liying_lab/chenxinfeng/ml-project/Social_Seq-Pipeline-Playground/2023-05-24_ball.calibpkl
 config=/home/liying_lab/chenxinfeng/DATA/CBNetV2/mask_rcnn_r101_fpn_2x_coco_bwrat_816x512_cam9.py
 
 python -m lilab.mmdet_dev_multi.s1_mmdet_videos2segpkl_dilate $vdir --pannels carl --config $config --maxlen 9000
@@ -82,7 +82,7 @@ cd /home/liying_lab/chenxinfeng/DATA/dannce/demo/rat14_1280x800x9_mono_young
 # 1. Prepare data
 # voxsize rat-black, voxsize rat-white, segpkl file
 volsize_vfiles="
-230 230 /mnt/liying.cibr.ac.cn_usb2/social-seq-playground/2-Social_3D_Pose/2023-05-24_14-43-58CBxDW_1min.segpkl
+230 230 /home/liying_lab/chenxinfeng/ml-project/Social_Seq-Pipeline-Playground/2-Social_3D_Pose/2023-05-24_14-43-58CBxDW_1min.segpkl
 "
 
 volsize_vfiles=$(echo "$volsize_vfiles" | grep -v '^[[:space:]]*$') #echo "$volsize_vfiles"
@@ -103,7 +103,7 @@ echo "$vfiles" | sed 's/.segpkl/.smoothed_foot.matcalibpkl/' | xargs -P 6 -l -r 
 
 # 5 Create 400p thumbnail video files (optional)
 bash /home/liying_lab/chenxinfeng/ml-project/LILAB-py/lilab/openlabcluster_postprocess/create_400p.sh \
-  /mnt/liying.cibr.ac.cn_usb2/social-seq-playground/2-Social_3D_Pose/
+  /home/liying_lab/chenxinfeng/ml-project/Social_Seq-Pipeline-Playground/2-Social_3D_Pose/
 ```
 
 生成结果：
@@ -117,7 +117,7 @@ bash /home/liying_lab/chenxinfeng/ml-project/LILAB-py/lilab/openlabcluster_postp
 
 ```bash
 conda activate OpenLabCluster
-PROEJECT_DIR=/mnt/liying.cibr.ac.cn_usb2/social-seq-playground/3-Sequence_Labeling
+PROEJECT_DIR=/home/liying_lab/chenxinfeng/ml-project/Social_Seq-Pipeline-Playground/3-Sequence_Labeling
 
 # 动物在每个video里面算体长，算sniffzone
 # 得到 'bodylength.pkl', 'rawfeat.pkl'
